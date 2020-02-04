@@ -1,0 +1,118 @@
+#container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#box {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 100px;
+  height: 100px;
+  background:
+    linear-gradient(270deg, #464655 25%, transparent 25%),
+    linear-gradient(360deg, #464655 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #EC173A;
+}
+
+#square {
+  z-index: 1000;
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  background-size: 100px 100px;
+  background-color: #94958B;
+}
+
+.bottom-right {
+  background:
+    linear-gradient(270deg, #464655 25%, transparent 25%),
+    linear-gradient(360deg, #464655 25%, transparent 25%);
+}
+
+.top-right {
+  background:
+    linear-gradient(180deg, #464655 25%, transparent 25%),
+    linear-gradient(270deg, #464655 25%, transparent 25%);
+}
+
+.bottom-left {
+  background:
+    linear-gradient(0deg, #464655 25%, transparent 25%),
+    linear-gradient(90deg, #464655 25%, transparent 25%);
+}
+
+.top-left {
+  background:
+    linear-gradient(90deg, #464655 25%, transparent 25%),
+    linear-gradient(180deg, #464655 25%, transparent 25%);
+}
+
+.top {
+  background:
+    linear-gradient(135deg, #464655 25%, transparent 25%),
+    linear-gradient(225deg, #464655 25%, transparent 25%),
+    linear-gradient(315deg, #464655 25%, transparent 25%)-50px 0,
+    linear-gradient(45deg, #464655 25%, transparent 25%)-50px 0;
+}
+
+.right {
+  background:
+    linear-gradient(225deg, #464655 25%, transparent 25%),
+    linear-gradient(315deg, #464655 25%, transparent 25%),
+    linear-gradient(45deg, #464655 25%, transparent 25%)0 -50px,
+    linear-gradient(135deg, #464655 25%, transparent 25%)0 -50px;
+}
+
+.left {
+  background:
+    linear-gradient(225deg, #464655 25%, transparent 25%) 0 -50px,
+    linear-gradient(315deg, #464655 25%, transparent 25%) 0 -50px,
+    linear-gradient(45deg, #464655 25%, transparent 25%),
+    linear-gradient(135deg, #464655 25%, transparent 25%);
+}
+
+.bottom {
+  background:
+    linear-gradient(135deg, #464655 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #464655 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #464655 25%, transparent 25%),
+    linear-gradient(45deg, #464655 25%, transparent 25%);
+}
+
+.mark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #565664;
+}
+
+.north-west {
+  left: 0px;
+  top: 0px;
+}
+
+.north-east {
+  right: 0px;
+  top: 0px;
+}
+
+.south-east {
+  right: 0px;
+  bottom: 0px;
+}
+
+.south-west {
+  left: 0px;
+  bottom: 0px;
+}
+
+.info {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}

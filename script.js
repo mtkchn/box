@@ -22,16 +22,13 @@ function mouseEnter() {
     status = true;
 }
 
-
 function mouseLeave() {
     status = false;
-
 }
 
 function checkBorder() {
     e = square.getBoundingClientRect();
     crdContainere = container.getBoundingClientRect();
-
 
     switch (true) {
         case e.top <= crdContainere.top && e.right >= crdContainere.right:
@@ -41,7 +38,6 @@ function checkBorder() {
             break;
 
         case e.top <= crdContainere.top && e.left <= crdContainere.left:
-
             square.style.top = `0px`;
             square.style.left = `0px`;
             break;
@@ -54,32 +50,26 @@ function checkBorder() {
 
         case e.bottom >= crdContainere.bottom && e.right >= crdContainere.right:
 
-
             square.style.top = `${crdContainere.bottom - e.height}px`;
             square.style.left = `${crdContainere.right - e.width}px`;
-
             break;
 
         case e.top <= crdContainere.top:
-            console.log('container top : ', crdContainere.top, 'Kwadrat top : ', e.top);
 
             square.style.top = `0px`;
             break;
 
         case e.right >= crdContainere.right:
-            console.log('container right : ', crdContainere.right, 'Kwadrat right : ', e.right);
 
             square.style.left = `${crdContainere.right-e.width}px`;
-
             break;
         case e.bottom >= crdContainere.bottom:
-            console.log('container bottom : ', crdContainere.bottom, 'Kwadrat bottom : ', e.bottom);
 
             square.style.top = `${crdContainere.bottom - e.height}px`;
-
             break;
+
         case e.left <= crdContainere.left:
-            console.log('container LEFT : ', crdContainere.left, 'Kwadrat LEFT : ', e.left);
+
             square.style.left = `0px`;
             break;
     }
@@ -91,7 +81,7 @@ function move() {
 
     switch (position) {
         case 'north-west':
-
+            square.className = "bottom-right";
             if (mouseX - crd.left > mouseY - crd.top) {
                 displace = Math.floor(crd.left + (mouseY - crd.top));
                 square.style.left = `${displace}px`;
@@ -109,6 +99,7 @@ function move() {
             break;
 
         case 'north-east':
+            square.className = "bottom-left";
 
             if (Math.abs(mouseX - crd.right) > Math.abs(mouseY - crd.top)) {
 
@@ -128,6 +119,7 @@ function move() {
             break;
 
         case 'south-east':
+            square.className = "top-left";
 
             if (Math.abs(mouseX - crd.right) > Math.abs(mouseY - crd.bottom)) {
 
@@ -146,6 +138,7 @@ function move() {
             }
             break;
         case 'south-west':
+            square.className = "top-right";
 
             if (Math.abs(mouseX - crd.left) > Math.abs(mouseY - crd.bottom)) {
                 displace = crd.left - (mouseY - crd.bottom);
@@ -162,21 +155,26 @@ function move() {
             }
             break;
         case 'north':
+            square.className = "bottom";
 
             displace = Math.floor(crd.top + (mouseY - crd.top));
             square.style.top = `${displace}px`
             break;
 
         case 'south':
+            square.className = "top";
             displace = Math.floor(crd.top + (mouseY - crd.bottom));
             square.style.top = `${displace}px`
             break;
         case 'east':
+            square.className = "left";
 
             displace = Math.floor(crd.left + (mouseX - crd.right));
             square.style.left = `${displace}px`
             break;
         case 'west':
+            square.className = "right";
+
             displace = Math.floor(crd.left + (mouseX - crd.left));
             square.style.left = `${displace}px`
             break;
@@ -190,14 +188,7 @@ function onMouseMove(event) {
     crd = square.getBoundingClientRect();
     mouseX = event.clientX;
     mouseY = event.clientY
-    document.getElementById('mouseX').innerHTML = mouseX;
-    document.getElementById('mouseY').innerHTML = mouseY;
 
-
-    document.getElementById('left').innerHTML = crd.left;
-    document.getElementById('top').innerHTML = crd.top;
-    document.getElementById('right').innerHTML = crd.right;
-    document.getElementById('bottom').innerHTML = crd.bottom;
 
     switch (true) {
         case
